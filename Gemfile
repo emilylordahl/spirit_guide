@@ -32,6 +32,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'httparty'
+
+# Yelp for Ruby version 2.0.5
+gem 'yelp', require: 'yelp'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug'
@@ -42,9 +47,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'pry-rails'
-  gem 'httparty'
 
-  # Yelp for Ruby version 2.0.5
-  gem 'yelp', require: 'yelp'
 end
 
