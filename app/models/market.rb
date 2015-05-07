@@ -1,7 +1,8 @@
-class Business < ActiveRecord::Base
+class Market < ActiveRecord::Base
 	has_and_belongs_to_many :users
 
 	def index
+		@markets = Market.all
 	end
 
 	def show
@@ -21,5 +22,5 @@ class Business < ActiveRecord::Base
 
 	def destory
 	end
-	
+
 end

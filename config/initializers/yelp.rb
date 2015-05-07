@@ -14,3 +14,4 @@ end
 
 # Sample Search
 # Yelp.client.search('San Francisco', { term: 'food' })
+# Yelp.client.business(yelp_id)
