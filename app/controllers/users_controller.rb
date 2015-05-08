@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 	end
 
 	def show
+		@user = User.find(params[:id])
+
+		respond_to do |format|
+			format.html {}
+			format.json { render json: @user }
+		end
 	end
 
 	def new
@@ -13,13 +19,19 @@ class UsersController < ApplicationController
 
 	def create
 		@user = User.new(user_params)
-		if @user.save
-			redirect_to users_path
-		else
-			render :new
-		end
 
-	end
+		if @user.save
+			respond_to do |format|
+				format.html { redirect_to users_path }
+				format.json { render json: @user }
+			end
+    else
+      respond_to do |format|
+        format.html { render :new }
+        format.json { render json: { error: 'New user not created', status: 400 } }
+      end
+    end
+  end
 
 	def edit
 	end
@@ -34,4 +46,19 @@ class UsersController < ApplicationController
 	def user_params
 		params.require(:user).permit(:first_name,:last_name,:email,:password,:password_confirmation)
 	end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
