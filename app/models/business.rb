@@ -8,13 +8,13 @@ class Business < ActiveRecord::Base
 		
 		businesses = business_data.businesses
 
-		business_ids = businesses.map do |biz|
+		business_info = businesses.map do |biz|
 			yelp_id = biz.id
 			name = biz.name
 			address = biz.location.display_address
 			phone_number = biz.display_phone
 			website = biz.url
-			rating = biz.rating
+			rating = biz.rating 
 
 		business = {
 			yelp_id: yelp_id,

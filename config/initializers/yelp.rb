@@ -11,7 +11,3 @@ Yelp.client.configure do |config|
   config.token = YOUR_TOKEN
   config.token_secret = YOUR_TOKEN_SECRET
 end
-
-# Sample Search
-# Yelp.client.search('San Francisco', { term: 'food' })
-# Yelp.client.business(yelp_id)

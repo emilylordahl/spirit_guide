@@ -1,5 +1,7 @@
 class MarketsController < ApplicationController
 
+	# before_action :authenticate
+
 	def index
 		@markets = Market.all
 	end
