@@ -37,6 +37,9 @@ gem 'httparty'
 # Yelp for Ruby version 2.0.5
 gem 'yelp', require: 'yelp'
 
+# Backbars
+gem 'backbars', '~> 0.0.11'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug'

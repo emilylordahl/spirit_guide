@@ -37,6 +37,8 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     arel (6.0.0)
+    backbars (0.0.11)
+      handlebars_assets
     bcrypt (3.1.10)
     builder (3.2.2)
     coderay (1.1.0)
@@ -55,6 +57,11 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
+    handlebars_assets (0.19.1)
+      execjs (>= 1.2.9)
+      multi_json
+      sprockets (>= 2.0.3)
+      tilt
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -155,6 +162,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  backbars (~> 0.0.11)
   bcrypt (~> 3.1.7)
   coffee-rails (~> 4.1.0)
   httparty
