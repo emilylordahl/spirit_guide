@@ -15,8 +15,71 @@
  */
 
 
-body {
+/* Light Green: #BDF2DF; 189 242 223 */
+/* Dark Green: #A0D9C4; 160 217 196 */
+/* Sage: #D1D9C1; 209 217 193 */
+/* Cream: #F2E2CE; 242 226 206 */
+/* Peach: #F2C6AC; 242 198 172 */
+
+body, html {
+	margin: auto;
+	text-align: center;	
 	font-family: 'Omnes';
-	background-color: #eee4F2;
+	background-color: snow;
+	color: lightgray;
+	letter-spacing: .5px;
+}
+
+h1, h2, h3 {
+	font-weight: 300;
+}
+
+a {
+	text-decoration: none;
+	color: lightgray;
+}
+
+#circle-container {
+	display: inline-block;
+	width: 90%;
+}
+
+.circles {
+	width: 200px;
+	height: 200px;
+	border-radius: 100%;
 	color: snow;
+	text-align: center;
+	vertical-align: center;
+	line-height: 200px;
+	font-weight: 300;
+	font-size: 24px;
+	margin: 4%;
+	float: left;
+	display: inline-block;
+}
+
+.circles:hover {
+	cursor: pointer;
+}
+
+#yoga {
+	background-color: #BDF2DF;
+}
+
+#veg {
+	background-color: #A0D9C4;
+}
+
+#juice {
+	background-color: #D1D9C1;
+}
+
+#market {
+	background-color: #F2E2CE;
+}
+
+.field_with_errors input {
+  padding: 5px;
+  border: 3px solid #indianred;
 }
