@@ -53,3 +53,6 @@ group :development, :test do
 
 end
 
+
+gem 'rails-assets-underscore', source: 'https://rails-assets.org'
+gem 'rails-assets-backbone', source: 'https://rails-assets.org'
