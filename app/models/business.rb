@@ -2,9 +2,9 @@ class Business < ActiveRecord::Base
 	
 	has_and_belongs_to_many :users
 
-	def self.search(borough, term)
+	def self.search(borough, query)
 
-		business_data = Yelp.client.search(borough, { term: term })
+		business_data = Yelp.client.search(borough, { term: query })
 		
 		businesses = business_data.businesses
 

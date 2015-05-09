@@ -13,12 +13,18 @@
 <% if current_user %>
 	<p>Welcome back, <%= current_user.first_name %>! | 
 	<%= link_to 'Logout', sessions_path, method: :delete %>
+	<section id='circle-container'>
+		<h2>Search for...</h2>
+		<div class='circles' id='yoga' data-value='yoga'>Yoga Studios</div>
+		<div class='circles' id='veg' data-value='vegetarian vegan'>Vegetarian/Vegan</div>
+		<div class='circles' id='juice' data-value='juicebars'>Juice Bars</div>
+		<div class='circles' id='market'>Farmers Markets</div>
+</section>
 	</p>
 <% else %>
 	<%= link_to 'Sign Up', new_user_path %> | 
 	<%= link_to 'Login', sessions_new_path %>
 <% end %>
-
 
 <%= yield %>
 
