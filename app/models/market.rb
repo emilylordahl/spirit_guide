@@ -6,9 +6,10 @@ class Market < ActiveRecord::Base
 
 	def self.search_borough(borough)
 
-		p borough
+		capped_borough = borough.capitalize
+		p capped_borough
 
-		url = BASE_URL + borough
+		url = BASE_URL + capped_borough
 		p url
 		market_data = HTTParty.get(url)
 
