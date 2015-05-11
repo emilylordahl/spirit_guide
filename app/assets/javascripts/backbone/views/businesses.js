@@ -17,8 +17,7 @@ App.Views.Businesses = Backbone.View.extend({
 	},
 
 	events: {
-		'click .yoga, .veg, .juice': 'getSearchTerm',
-		'click .farmersmarket': 'getBorough'
+		'click .yoga, .veg, .juice': 'getSearchTerm'
 	},
 
 	getSearchTerm: function(event) {
@@ -26,17 +25,6 @@ App.Views.Businesses = Backbone.View.extend({
 		var term = clicked.attr('data-value');
 		clicked.toggleClass('clicked');
 		this.collection.search(term);	
-	},
-
-	getBorough: function(event) {
-		var clicked = $(event.currentTarget);
-		var borough = clicked.attr('data-value');
-		clicked.toggleClass('clicked');
-		console.log(borough);
-		this.collection.searchBorough(borough);	
-		// var selected = $(event.target.value);
-		// var borough = selected.selector;
-		// this.collection.searchYelp(borough);
 	}
 
 });

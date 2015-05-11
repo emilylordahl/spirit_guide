@@ -1,13 +1,12 @@
 App.Views.Business = Backbone.View.extend({
 
 	initialize: function() {
-		this.template = HandlebarsTemplates['business'];
-		// this.template = HandlebarsTemplates['market'];
+		this.businessTemplate = HandlebarsTemplates['business'];
 		this.render();
 	},
 
 	render: function() {
-		this.$el.html(this.template(this.model.toJSON()));
+		this.$el.html(this.businessTemplate(this.model.toJSON()));
 	}
 
 });

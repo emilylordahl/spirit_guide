@@ -7,7 +7,6 @@ class MarketsController < ApplicationController
 		render json: results
 	end
 	
-
 	# def index
 	# 	@markets = Market.all
 	# end
