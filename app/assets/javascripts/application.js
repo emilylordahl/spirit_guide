@@ -13,4 +13,24 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require underscore
+//= require backbone
+//= require handlebars
+//= require_self
+//= require_tree ./backbone/routers
+//= require_tree ./backbone/models
+//= require_tree ./backbone/collections
+//= require_tree ./backbone/views
+//= require_tree ./templates
 //= require_tree .
+var App = {
+	Models: {}, 
+	Collections: {}, 
+	Views: {}, 
+	Routers: {}
+};
+
+$(function() {
+	var businessCollection = new App.Collections.Businesses;
+	var businessesView = new App.Views.Businesses({ collection: businessCollection });
+});	

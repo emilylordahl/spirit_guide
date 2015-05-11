@@ -6,7 +6,10 @@ class Market < ActiveRecord::Base
 
 	def self.search_borough(borough)
 
+		p borough
+
 		url = BASE_URL + borough
+		p url
 		market_data = HTTParty.get(url)
 
 		markets = market_data.map do |market|
@@ -25,6 +28,8 @@ class Market < ActiveRecord::Base
 		}
 			
 		end
+
+		p markets
 
 	end
 

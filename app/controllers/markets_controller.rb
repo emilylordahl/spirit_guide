@@ -1,29 +1,36 @@
 class MarketsController < ApplicationController
 
-	# before_action :authenticate
+	before_action :authenticate
 
-	def index
-		@markets = Market.all
+	def search
+		results = Market.search_borough(params[:term])
+		render json: results
 	end
+	
 
-	def show
-		@market = Market.find(params[:id])
-	end
+	# def index
+	# 	@markets = Market.all
+	# end
 
-	def create
-		@market = Market.new(market_params)
-		@market.save
-		redirect_to @market
-	end
+	# def show
+	# 	@market = Market.find(params[:id])
+	# end
 
-	def update
-	end
+	# def create
+	# 	@market = Market.new(market_params)
+	# 	@market.save
+	# 	redirect_to @market
+	# end
 
-	def destory
-	end
+	# def update
+	# end
 
-	private
-	def market_params
-		params.require(:market).permit(:name,:borough,:days_open,:hours,:address)
-	end
+	# def destory
+	# end
+
+	# private
+	# def market_params
+	# 	params.require(:market).permit(:name,:borough,:days_open,:hours,:address)
+	# end
+
 end

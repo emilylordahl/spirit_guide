@@ -1,2 +1,2 @@
-# White Girl in your Pocket
+# SpiritGuide
 WDI Project 3

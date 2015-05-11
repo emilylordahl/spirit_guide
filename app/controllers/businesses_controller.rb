@@ -1,20 +1,22 @@
 class BusinessesController < ApplicationController
 
-	# before_action :authenticate
+	before_action :authenticate
+
+	def search
+		results = Business.search(params[:term])
+		render json: results
+	end
 	
-	def index
-	end
+	# def index
+	# end
 
-	def show
-	end
+	# def create
+	# end
 
-	def create
-	end
+	# def update
+	# end
 
-	def update
-	end
-
-	def destory
-	end
+	# def destory
+	# end
 	
 end
