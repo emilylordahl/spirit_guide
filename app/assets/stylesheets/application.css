@@ -14,7 +14,8 @@
  *= require_self
  */
 
-
+/* palevioletred */
+/* mistyrose */
 /* Light Green: #BDF2DF; 189 242 223 */
 /* Dark Green: #A0D9C4; 160 217 196 */
 /* Sage: #D1D9C1; 209 217 193 */
@@ -25,9 +26,16 @@ body, html {
 	margin: auto;
 	text-align: center;	
 	font-family: 'Omnes';
-	background-color: snow;
-	color: lightgray;
+	background-color: #fff;
+	color: silver;
 	letter-spacing: .5px;
+	font-size: 1em;
+	line-height: auto;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0px;
 }
 
 h1, h2, h3 {
@@ -36,7 +44,12 @@ h1, h2, h3 {
 
 a {
 	text-decoration: none;
-	color: lightgray;
+	color: silver;
+	transition: ease .5s all;
+}
+
+a:hover {
+	color: palevioletred;
 }
 
 #circle-container {
@@ -57,29 +70,63 @@ a {
 	margin: 4%;
 	float: left;
 	display: inline-block;
+	transition: ease .5s all;
 }
 
 .circles:hover {
 	cursor: pointer;
+	opacity: .75;
 }
 
-#yoga {
+.yoga {
 	background-color: #BDF2DF;
 }
 
-#veg {
+.veg {
 	background-color: #A0D9C4;
 }
 
-#juice {
+.juice {
 	background-color: #D1D9C1;
 }
 
-#market {
+.farmersmarket {
 	background-color: #F2E2CE;
+}
+
+.clicked {
+	background-color: palevioletred;
+	color: snow;
+}
+
+.business {
+	width: 25%;
+	margin: 10px auto;
+	float: left;
+	display: inline-block;
+	height: 250px;
+	text-align: left;
+}
+
+.business h2 {
+	color: palevioletred;
+}
+
+#yelp-rating {
+	background-color: pink;
+  width: 20px;
+  height: 20px;
+  padding: 15px;
+  border-radius: 100%;
+  color: snow;
+  font-weight: 600;
+  vertical-align: middle;
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
 }
 
 .field_with_errors input {
   padding: 5px;
-  border: 3px solid #FD655C;
+  border: 3px solid palevioletred;
 }

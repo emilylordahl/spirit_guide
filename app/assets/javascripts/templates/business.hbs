@@ -1,7 +1,11 @@
-<div id='{{yelp_id}}'>
+<div class='business' id='{{yelp_id}}'>
 	<h2>{{name}}</h2>
-	<p>{{address}}</p>
+	<ul class='address'>
+	{{#each address}}
+		<li>{{this}}</li>
+	{{/each}}
+	</ul>
 	<p>{{phone_number}}</p>
-	<p>{{website}}</p>
-	<p>Yelp Rating: {{rating}}</p>
+	<a href='{{website}}' target='_blank'>{{name}} on Yelp</a>
+	<div><span>Yelp Rating: <span id='yelp-rating'>{{rating}}</span></span></div>
 </div>
