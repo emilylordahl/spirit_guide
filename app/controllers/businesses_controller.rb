@@ -7,17 +7,47 @@ class BusinessesController < ApplicationController
 		render json: results
 	end
 	
-	# def index
-	# end
+	def index
+		@businesses = Business.all
 
-	# def create
-	# end
+		respond_to do |format|
+			format.html {}
+			format.json { render json: @businesses }
+		end
+	end
 
-	# def update
-	# end
+	def show
+		@business = Business.find(params[:id])
 
-	# def destory
-	# end
+		respond_to do |format|
+			format.html {}
+			format.json { render json: @business }
+		end
+	end
+
+	def new
+		@business = Business.new
+	end
+
+	def create
+		@business = Business.new(business_params)
+		@business.save
+
+		respond_to do |format|
+			format.html { redirect_to @business }
+			format.json { render json: @business }
+		end
+	end
+
+	def edit
+		@business = Business.find(params[:id])
+	end
+
+	def update
+	end
+
+	def destory
+	end
 	
 	def add_user
 		business = Business.find(params[:id])
@@ -43,9 +73,9 @@ class BusinessesController < ApplicationController
 		end
 	end
 
-	# private
-	# def business_params
-	# 	params.require(:business).permit(:yelp_id)
-	# end
+	private
+	def business_params
+		params.require(:business).permit(:yelp_id)
+	end
 
 end
