@@ -36,7 +36,7 @@ class Business < ActiveRecord::Base
 	end
 
 	def remove_user(user)
-		self.users.push(user) if self.users.include? user
+		self.users.destroy(user) if self.users.include? user
 	end
 
 
