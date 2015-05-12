@@ -2,9 +2,9 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
   
-  resources :markets, except: [:new, :edit, :show]
-  resources :businesses, except: [:new, :edit, :show]
   resources :users
+  # resources :markets, except: [:new, :edit, :show]
+  # resources :businesses, except: [:new, :edit, :show]
 
   get 'sessions/new' => 'sessions#new', as: :login
   post 'sessions' => 'sessions#create'
@@ -12,6 +12,5 @@ Rails.application.routes.draw do
 
   get 'businesses/search' => 'businesses#search'
   get 'markets/search' => 'markets#search'
-
 
 end

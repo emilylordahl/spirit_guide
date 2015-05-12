@@ -34,12 +34,29 @@ class UsersController < ApplicationController
   end
 
 	def edit
+		@user = User.find(params[:id])
 	end
 
 	def update
+		@user = User.find(params[:id])
+
+		@user.update(user_params)
+
+		respond_to do |format|
+			format.html { redirect_to user_path(@user.id) }
+			format.json { render json: @user }
+		end
 	end
 
 	def destory
+		@user = User.find(params[:id])
+
+		@user.destroy
+
+		respond_to do |format|
+			format.html { redirect_to new_user_path }
+			format.json { render json: @user }
+		end
 	end
 
 	private

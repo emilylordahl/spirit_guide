@@ -1,0 +1,6 @@
+<p>
+	<%= current_user.first_name %>'s Profile! |
+	<%= link_to 'Edit Info', edit_user_path %> |  
+	<%= link_to 'Back', root_path %> | 
+	<%= link_to 'Logout', logout_path, method: :delete %>
+</p>
