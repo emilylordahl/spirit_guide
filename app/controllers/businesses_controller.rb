@@ -6,11 +6,6 @@ class BusinessesController < ApplicationController
 		results = Business.search(params[:term])
 		render json: results
 	end
-
-	def save
-		results = Business.save(params[:term])
-		render json: results
-	end
 	
 	def index
 		@businesses = Business.all

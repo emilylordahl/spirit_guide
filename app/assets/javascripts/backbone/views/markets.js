@@ -2,6 +2,9 @@ App.Views.Markets = Backbone.View.extend({
 
 	el: '#market-container',
 
+	className: 'market',
+	tagName: 'div',
+	
 	initialize: function() {
 		this.listenTo(this.collection, 'reset', this.renderAll);
 		this.listenTo(this.collection, 'add', this.render);

@@ -83,7 +83,7 @@ class UsersController < ApplicationController
 	def remove_business
 		user = User.find(params[:id])
 		business = Business.find(params[:business_id])
-		# binding.pry
+		binding.pry
 
 		user.remove_business(business)
 
