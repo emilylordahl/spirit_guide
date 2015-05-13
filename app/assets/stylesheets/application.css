@@ -14,14 +14,6 @@
  *= require_self
  */
 
-/* palevioletred */
-/* mistyrose */
-/* Light Green: #BDF2DF; 189 242 223 */
-/* Dark Green: #A0D9C4; 160 217 196 */
-/* Sage: #D1D9C1; 209 217 193 */
-/* Cream: #F2E2CE; 242 226 206 */
-/* Peach: #F2C6AC; 242 198 172 */
-
 body, html {
 	margin: auto;
 	text-align: center;	
@@ -40,22 +32,37 @@ body, html {
 header {
   background-color: #f8f8f8;
   top: 0px;
-  position: absolute;
+  position: fixed;
   width: 100%;
   margin-bottom: 20px;
-  height: 15%;
+  height: 115px;
 }
 
-.content {
-  margin-top: 115px;
-  /*position: absolute;*/
+#outer-container {
+  margin-top: 150px;
   z-index: -1;
 }
 
-#spirit-guide {
+h1.spirit-guide {
 	font-size: 48px;
+  margin: 0px;
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 15px;
 }
 
+.welcome-message {
+  top: 7.5%;
+  text-align: right;
+  padding-right: 10%;	
+}
+
+h2.spirit-guide {
+	font-size: 18px;
+  margin: 0;
+  text-align: left;
+  padding-left: 10%;
+}
 
 ul {
 	list-style: none;

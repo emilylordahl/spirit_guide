@@ -9,10 +9,10 @@
 <body>
 
 <header>
-	<a href='/'><h1 id='spirit-guide'>SpiritGuide</h1></a>
-	<h2 >Find places so good, you literally can't even.</h2>
+	<a href='/'><h1 class='spirit-guide'>SpiritGuide</h1></a>
+	<h2 class='spirit-guide'>Find places so good, you literally can't even.</h2>
 	<% if current_user %>
-		<p>Welcome back, <%= current_user.first_name %>! | 
+		<p class='welcome-message'>Welcome back, <%= current_user.first_name %>! | 
 		<%= link_to 'Profile', user_path(current_user.id) %> | 
 		<%= link_to 'Logout', logout_path, method: :delete %>
 		</p>
