@@ -5,8 +5,16 @@ App.Views.Business = Backbone.View.extend({
 		this.render();
 	},
 
+	events: {
+		'click #save-business': 'saveBusiness'
+	},
+
 	render: function() {
 		this.$el.html(this.businessTemplate(this.model.toJSON()));
+	},
+
+	saveBusiness: function() {
+		this.model.save();
 	}
 
 });

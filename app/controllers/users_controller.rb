@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-
+		@businesses = @user.businesses
+		
 		respond_to do |format|
 			format.html {}
 			format.json { render json: @user }
@@ -55,6 +56,39 @@ class UsersController < ApplicationController
 
 		respond_to do |format|
 			format.html { redirect_to new_user_path }
+			format.json { render json: @user }
+		end
+	end
+
+	# def add_market
+	# 	user = User.find(params[:id])
+	# end
+
+	# def remove_market
+	# 	user = User.find(params[:id])
+	# end
+
+	def add_business
+		user = User.find(params[:id])
+		business = Business.find(params[:id])
+
+		user.add_business(business)
+
+		respond_to do |format|
+			format.html { redirect_to user_path(user) }
+			format.json { render json: @user }
+		end
+	end
+
+	def remove_business
+		user = User.find(params[:id])
+		business = Business.find(params[:business_id])
+		# binding.pry
+
+		user.remove_business(business)
+
+		respond_to do |format|
+			format.html { redirect_to user_path(user) }
 			format.json { render json: @user }
 		end
 	end

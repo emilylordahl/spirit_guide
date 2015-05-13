@@ -31,13 +31,4 @@ class Business < ActiveRecord::Base
 
 	end
 
-	def add_user(user)
-		self.users.push(user) unless self.users.include? user
-	end
-
-	def remove_user(user)
-		self.users.destroy(user) if self.users.include? user
-	end
-
-
 end

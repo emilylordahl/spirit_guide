@@ -3,4 +3,23 @@
 	<%= link_to 'Edit Info', edit_user_path %> |  
 	<%= link_to 'Back', root_path %> | 
 	<%= link_to 'Logout', logout_path, method: :delete %>
+
 </p>
+
+	<% @user.businesses.each do |business| %>
+		<p>
+		<%= business.yelp_id %>
+		<%= hidden_field :business_id, :value => '#{business.id}' %>
+		
+		<span>
+			
+			<%= form_tag(remove_business_from_user_path(@user), method: 'put') %>
+			<input type='submit' value='Delete'>
+
+		</span>
+	<% end %>
+
+
+
+
+

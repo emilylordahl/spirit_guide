@@ -49,28 +49,28 @@ class MarketsController < ApplicationController
 	# def destory
 	# end
 
-	def add_user
-		market = Market.find(params[:id])
-		user = User.find(params[:user_id])
+	# def add_user
+	# 	market = Market.find(params[:id])
+	# 	user = User.find(params[:user_id])
 
-		market.add_user(user)
+	# 	market.add_user(user)
 
-		respond_to do |format|
-			format.html { redirect_to user_path(user) }
-			format.json { render json: @user }
-		end
-	end
+	# 	respond_to do |format|
+	# 		format.html { redirect_to user_path(user) }
+	# 		format.json { render json: @user }
+	# 	end
+	# end
 
-	def remove_user
-		market = Market.find(params[:id])
-		user = User.find(params[:user_id])
+	# def remove_user
+	# 	market = Market.find(params[:id])
+	# 	user = User.find(params[:user_id])
 
-		market.remove_user(user)
+	# 	market.remove_user(user)
 
-		respond_to do |format|
-			format.html { redirect_to user_path(user) }
-			format.json { render json: @user }
-	end
+	# 	respond_to do |format|
+	# 		format.html { redirect_to user_path(user) }
+	# 		format.json { render json: @user }
+	# end
 
 	# private
 	# def market_params
