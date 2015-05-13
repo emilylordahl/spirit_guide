@@ -1,1 +1,3 @@
-App.Models.Business = Backbone.Model.extend();
+App.Models.Business = Backbone.Model.extend({
+	urlRoot: '/businesses'
+});

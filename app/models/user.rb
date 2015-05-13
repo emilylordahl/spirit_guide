@@ -11,4 +11,20 @@ class User < ActiveRecord::Base
 	validates :password_confirmation, presence: true
 	validates :password_confirmation, confirmation: true
 
+	def add_market(market)
+		self.markets.push(market) unless self.markets.include? market
+	end
+
+	def remove_market(market)
+		self.markets.destroy(market) if self.markets.include? market
+	end
+
+	def add_business(business)
+		self.businesses.push(business) unless self.businesses.include? business
+	end
+
+	def remove_business(business)
+		self.businesses.destroy(business) if self.businesses.include? business
+	end
+
 end

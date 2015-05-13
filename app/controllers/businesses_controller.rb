@@ -6,6 +6,11 @@ class BusinessesController < ApplicationController
 		results = Business.search(params[:term])
 		render json: results
 	end
+
+	def save
+		results = Business.save(params[:term])
+		render json: results
+	end
 	
 	def index
 		@businesses = Business.all
@@ -30,8 +35,16 @@ class BusinessesController < ApplicationController
 	end
 
 	def create
-		@business = Business.new(business_params)
-		@business.save
+		
+		@business = Business.find_by(business_params)
+		
+		if @business.nil?
+			@business = Business.create(business_params)
+		end
+
+		if current_user
+			current_user.add_business(@business)		
+		end
 
 		respond_to do |format|
 			format.html { redirect_to @business }
@@ -47,30 +60,6 @@ class BusinessesController < ApplicationController
 	end
 
 	def destory
-	end
-	
-	def add_user
-		business = Business.find(params[:id])
-		user = User.find(params[:user_id])
-
-		business.add_user(user)
-
-		respond_to do |format|
-			format.html { redirect_to user_path(user) }
-			format.json { render json: @user }
-		end
-	end
-
-	def remove_user
-		business = Business.find(params[:id])
-		user = User.find(params[:user_id])
-
-		business.remove_user(user)
-
-		respond_to do |format|
-			format.html { redirect_to user_path(user) }
-			format.json { render json: @user }
-		end
 	end
 
 	private
