@@ -25,13 +25,37 @@
 body, html {
 	margin: auto;
 	text-align: center;	
-	font-family: 'Omnes';
+	font-family: 'Omnes', 'Gotham', 'Helvetica', sans-serif;
 	background-color: #fff;
 	color: silver;
-	letter-spacing: .5px;
+	letter-spacing: .75px;
 	font-size: 1em;
 	line-height: auto;
 }
+
+:focus {
+  outline: none;
+}
+
+header {
+  background-color: #f8f8f8;
+  top: 0px;
+  position: absolute;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 15%;
+}
+
+.content {
+  margin-top: 115px;
+  /*position: absolute;*/
+  z-index: -1;
+}
+
+#spirit-guide {
+	font-size: 48px;
+}
+
 
 ul {
 	list-style: none;
@@ -99,7 +123,7 @@ a:hover {
 	color: snow;
 }
 
-.business {
+.business, .market {
 	width: 25%;
 	margin: 10px auto;
 	float: left;
@@ -108,7 +132,7 @@ a:hover {
 	text-align: left;
 }
 
-.business h2 {
+.business h2, .market h2 {
 	color: palevioletred;
 }
 
@@ -124,6 +148,41 @@ a:hover {
   display: inline-block;
   text-align: center;
   font-size: 24px;
+}
+
+button {
+  padding: 7.5px;
+  border: 2px solid silver;
+  font-family: 'Omnes', 'Gotham', 'Helvetica', sans-serif;
+  font-size: 15px;
+  color: palevioletred;
+  letter-spacing: .5px;
+  background-color: snow;
+  border-radius: 10%;
+  transition: all .75s ease;
+}
+
+button:hover{
+	border: 2px solid pink;
+	cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  text-align: center;
+  font-family: 'Omnes', 'Gotham', 'Helvetica', sans-serif;
+  font-size: 15px;
+  width: 30%;
+  border: 1px solid silver;
+  transition: all .75s ease;
+  border-radius: 10px;
+  color: teal;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+input:hover {
+  border: 1px solid teal;
 }
 
 .field_with_errors input {

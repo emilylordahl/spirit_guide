@@ -7,6 +7,13 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@businesses = @user.businesses
+
+		yelp_ids = @businesses.map do |business|
+			Business.biz_search(business.yelp_id)
+		end
+
+		p yelp_ids
+
 		
 		respond_to do |format|
 			format.html {}
@@ -23,7 +30,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			respond_to do |format|
-				format.html { redirect_to users_path }
+				format.html { redirect_to login_path }
 				format.json { render json: @user }
 			end
     else
@@ -83,7 +90,7 @@ class UsersController < ApplicationController
 	def remove_business
 		user = User.find(params[:id])
 		business = Business.find(params[:business_id])
-		# binding.pry
+		binding.pry
 
 		user.remove_business(business)
 

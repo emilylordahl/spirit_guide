@@ -8,47 +8,42 @@
 </head>
 <body>
 
-<a href='/'><h1>SpiritGuide</h1></a>
-<h2>Find places so good, you literally can't even.</h2>
+<header>
+	<a href='/'><h1 id='spirit-guide'>SpiritGuide</h1></a>
+	<h2 >Find places so good, you literally can't even.</h2>
+	<% if current_user %>
+		<p>Welcome back, <%= current_user.first_name %>! | 
+		<%= link_to 'Profile', user_path(current_user.id) %> | 
+		<%= link_to 'Logout', logout_path, method: :delete %>
+		</p>
+</header>
 
-<% if current_user %>
-	<p>Welcome back, <%= current_user.first_name %>! | 
-	<%= link_to 'Profile', user_path(current_user.id) %> | 
-	<%#= link_to 'Edit Info', edit_user_path(current_user.id) %> |
-	<%= link_to 'Logout', logout_path, method: :delete %>
-	</p>
-	<section id='circle-container'>
-	<h2>Search for...</h2>
-	<div class='circles yoga' data-value='yoga'>Yoga Studios</div>
-	<div class='circles veg' data-value='vegetarian vegan'>Vegetarian/Vegan</div>
-	<div class='circles juice' data-value='juicebars'>Juice Bars</div>
-	<section id='market-container'>
-		<div class='circles farmersmarket' data-value='brooklyn'>Farmers Markets
-			<section id='market-results'></section>
-		</div>
-	</section>
+<div class='content'>
 	
-	<h2>in...</h2>
-	<select name='borough' class='borough-dropdown'>
-		<option value='bronx'>Bronx</option>
-		<option value='brooklyn'>Brooklyn</option>
-		<option value='manhattan'>Manhattan</option>
-		<option value='queens'>Queens</option>
-		<option value='staten-island'>Staten Island</option>
-	</select>
+		<div id='outer-container'>
+			<section id='circle-container'>
+				<p><input class='search-input' type='text' name='first_name' placeholder='Search by Borough...'></p>
+				<div class='circles yoga' data-value='yoga'>Yoga Studios</div>
+				<div class='circles veg' data-value='vegetarian vegan'>Vegetarian/Vegan</div>
+				<div class='circles juice' data-value='juicebars'>Juice Bars</div>
+				<section id='market-container'>
+					<div class='circles farmersmarket' data-value='farmersmarket'>Farmers Markets
+					</div>
+						<section id='market-results'></section>
+				</section>
 
-	<button id='search-button'>Search</button>
+			<section id='search-results'></section>
+	</section>
+</div>
 
-	<section id='search-results'></section>
-</section>
 
+	<% else %>
+		<%= link_to 'Sign Up', new_user_path %> | 
+		<%= link_to 'Login', login_path %>
+	<% end %>
 
-<% else %>
-	<%= link_to 'Sign Up', new_user_path %> | 
-	<%= link_to 'Login', login_path %>
-<% end %>
-
-<%= yield %>
+	<%= yield %>
+</div>
 
 </body>
 </html>

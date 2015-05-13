@@ -1,23 +1,27 @@
-<p>
-	<%= current_user.first_name %>'s Profile! |
-	<%= link_to 'Edit Info', edit_user_path %> |  
+<h2><%= current_user.first_name %>'s Saved Places</h2>
+<p>	
+	<%= link_to 'Edit Profile', edit_user_path %> |  
 	<%= link_to 'Back', root_path %> | 
 	<%= link_to 'Logout', logout_path, method: :delete %>
-
 </p>
 
-	<% @user.businesses.each do |business| %>
-		<p>
+<% @user.businesses.each do |business| %>
+	<p>
 		<%= business.yelp_id %>
 		<%= hidden_field :business_id, :value => '#{business.id}' %>
-		
-		<span>
-			
-			<%= form_tag(remove_business_from_user_path(@user), method: 'put') %>
-			<input type='submit' value='Delete'>
+		<%= form_tag(remove_business_from_user_path(@user), method: 'post') %>
+		<!-- <input type='submit' value='Delete'> -->
+	</p>
+<% end %>
 
-		</span>
-	<% end %>
+<% @user.markets.each do |market| %>
+	<h2><%= market.name %></h2>
+	<p><%= market.address %></p>
+	<p><%= market.borough %></p>
+	<p><%= market.days_open %></p>
+	<p><%= market.hours %></p>
+<% end %>
+
 
 
 

@@ -1,6 +1,6 @@
 App.Views.Businesses = Backbone.View.extend({
 
-	el: '#circle-container',
+	el: '#outer-container',
 
 	initialize: function() {
 		this.listenTo(this.collection, 'reset', this.renderAll);
@@ -8,12 +8,13 @@ App.Views.Businesses = Backbone.View.extend({
 	},
 
 	renderAll: function() {
-		this.$('#circle-container').empty();
+		this.$('#search-results').empty();
 		this.collection.each(this.render, this);
 	},
 
 	render: function(business) {
-		this.$('#search-results').append(new App.Views.Business({  model: business }).$el);	
+		this.$('#search-results')
+		    .append(new App.Views.Business({  model: business }).$el);	
 	},
 
 	events: {
@@ -23,8 +24,14 @@ App.Views.Businesses = Backbone.View.extend({
 	getSearchTerm: function(event) {
 		var clicked = $(event.currentTarget);
 		var term = clicked.attr('data-value');
-		clicked.toggleClass('clicked');
-		this.collection.search(term);	
+		var borough = $('.search-input').val();
+			if (borough === '') {
+				alert('Please search by location!');	
+			} else {
+				clicked.toggleClass('clicked');
+				this.collection.search(borough, term);
+				$('.search-input').val('');		
+			}
 	}
 
 });

@@ -3,12 +3,12 @@ class BusinessesController < ApplicationController
 	before_action :authenticate
 
 	def search
-		results = Business.search(params[:term])
+		results = Business.search(params[:borough], params[:term])
 		render json: results
 	end
 
-	def save
-		results = Business.save(params[:term])
+	def biz_search
+		results = Business.biz_search(@business.yelp_id)
 		render json: results
 	end
 	

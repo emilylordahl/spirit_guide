@@ -25,13 +25,21 @@ class MarketsController < ApplicationController
 		end
 	end
 
-	# def new
-	# 	@market = Market.new
-	# end
+	def new
+		@market = Market.new
+	end
 
 	def create
-		@market = Market.new(market_params)
-		@market.save
+
+		@market = Market.find_by(market_params)
+
+		if @market.nil?
+			@market = Market.create(market_params)
+		end
+
+		if current_user
+			current_user.add_market(@market)
+		end
 
 		respond_to do |format|
 			format.html { redirect_to @market }
@@ -49,32 +57,9 @@ class MarketsController < ApplicationController
 	# def destory
 	# end
 
-	# def add_user
-	# 	market = Market.find(params[:id])
-	# 	user = User.find(params[:user_id])
-
-	# 	market.add_user(user)
-
-	# 	respond_to do |format|
-	# 		format.html { redirect_to user_path(user) }
-	# 		format.json { render json: @user }
-	# 	end
-	# end
-
-	# def remove_user
-	# 	market = Market.find(params[:id])
-	# 	user = User.find(params[:user_id])
-
-	# 	market.remove_user(user)
-
-	# 	respond_to do |format|
-	# 		format.html { redirect_to user_path(user) }
-	# 		format.json { render json: @user }
-	# end
-
-	# private
-	# def market_params
-	# 	params.require(:market).permit(:name,:borough,:days_open,:hours,:address)
-	# end
+	private
+	def market_params
+		params.require(:market).permit(:name,:borough,:days_open,:hours,:address)
+	end
 
 end

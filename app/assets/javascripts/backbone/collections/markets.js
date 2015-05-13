@@ -7,7 +7,6 @@ App.Collections.Markets = Backbone.Collection.extend({
 	},
 
 	searchBorough: function(borough) {
-		console.log('YOU GOT HURRRRRRRR!')
 		$.getJSON(this.searchSoda(borough))
 		 .done(this.reset.bind(this));
 	}

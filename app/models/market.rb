@@ -5,11 +5,11 @@ class Market < ActiveRecord::Base
 	BASE_URL = 'https://data.cityofnewyork.us/resource/cdpt-29ur.json?borough='
 
 	def self.search_borough(borough)
-
-		capped_borough = borough.capitalize
+		p borough
+		capped_borough = borough.titleize
 		p capped_borough
 
-		url = BASE_URL + capped_borough
+		url = BASE_URL + URI.escape(capped_borough)
 		p url
 		market_data = HTTParty.get(url)
 
@@ -32,14 +32,6 @@ class Market < ActiveRecord::Base
 
 		p markets
 
-	end
-
-	def add_user(user)
-		self.users.push(user) unless self.users.include? user
-	end
-
-	def remove_user(user)
-		self.users.destroy(user) if self.users.include? user
 	end
 
 end
