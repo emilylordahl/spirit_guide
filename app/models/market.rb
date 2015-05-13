@@ -5,11 +5,11 @@ class Market < ActiveRecord::Base
 	BASE_URL = 'https://data.cityofnewyork.us/resource/cdpt-29ur.json?borough='
 
 	def self.search_borough(borough)
-
-		capped_borough = borough.capitalize
+		p borough
+		capped_borough = borough.titleize
 		p capped_borough
 
-		url = BASE_URL + capped_borough
+		url = BASE_URL + URI.escape(capped_borough)
 		p url
 		market_data = HTTParty.get(url)
 

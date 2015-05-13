@@ -32,4 +32,20 @@ class Business < ActiveRecord::Base
 
 	end
 
+	def self.biz_search(yelp_id)
+		p yelp_id
+		biz = Yelp.client.business(yelp_id)
+
+		business = {
+			name: biz.name,
+			address: biz.location.display_address,
+			phone_number: biz.display_phone,
+			website: biz.url,
+			rating: biz.rating
+		}
+
+		p business
+
+	end
+
 end

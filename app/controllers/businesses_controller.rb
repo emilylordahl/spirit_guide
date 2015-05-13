@@ -6,6 +6,11 @@ class BusinessesController < ApplicationController
 		results = Business.search(params[:borough], params[:term])
 		render json: results
 	end
+
+	def biz_search
+		results = Business.biz_search(@business.yelp_id)
+		render json: results
+	end
 	
 	def index
 		@businesses = Business.all

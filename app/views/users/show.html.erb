@@ -1,6 +1,6 @@
 <h2><%= current_user.first_name %>'s Saved Places</h2>
 <p>	
-	<%= link_to 'Edit Info', edit_user_path %> |  
+	<%= link_to 'Edit Profile', edit_user_path %> |  
 	<%= link_to 'Back', root_path %> | 
 	<%= link_to 'Logout', logout_path, method: :delete %>
 </p>
@@ -10,7 +10,7 @@
 		<%= business.yelp_id %>
 		<%= hidden_field :business_id, :value => '#{business.id}' %>
 		<%= form_tag(remove_business_from_user_path(@user), method: 'post') %>
-		<input type='submit' value='Delete'>
+		<!-- <input type='submit' value='Delete'> -->
 	</p>
 <% end %>
 
