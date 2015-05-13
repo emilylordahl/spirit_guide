@@ -8,8 +8,10 @@
 </head>
 <body>
 
-<a href='/'><h1>SpiritGuide</h1></a>
-<h2>Find places so good, you literally can't even.</h2>
+<header>
+	<a href='/'><h1>SpiritGuide</h1></a>
+	<h2>Find places so good, you literally can't even.</h2>
+</header>
 
 <% if current_user %>
 	<p>Welcome back, <%= current_user.first_name %>! | 
@@ -17,8 +19,9 @@
 	<%#= link_to 'Edit Info', edit_user_path(current_user.id) %> |
 	<%= link_to 'Logout', logout_path, method: :delete %>
 	</p>
+
 	<section id='circle-container'>
-	<h2>Search for...</h2>
+	<p><input class='search-input' type='text' name='first_name' placeholder='Borough...'></p>
 	<div class='circles yoga' data-value='yoga'>Yoga Studios</div>
 	<div class='circles veg' data-value='vegetarian vegan'>Vegetarian/Vegan</div>
 	<div class='circles juice' data-value='juicebars'>Juice Bars</div>
@@ -28,7 +31,7 @@
 			<section id='market-results'></section>
 	</section>
 	
-	<h2>in...</h2>
+<!-- 	<h2>in...</h2>
 	<select name='borough' class='borough-dropdown'>
 		<option value='bronx'>Bronx</option>
 		<option value='brooklyn'>Brooklyn</option>
@@ -36,8 +39,8 @@
 		<option value='queens'>Queens</option>
 		<option value='staten-island'>Staten Island</option>
 	</select>
-
-	<button id='search-button'>Search</button>
+ -->
+	<!-- <button id='search-button'>Search</button> -->
 
 	<section id='search-results'></section>
 </section>

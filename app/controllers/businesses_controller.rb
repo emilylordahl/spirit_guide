@@ -3,7 +3,7 @@ class BusinessesController < ApplicationController
 	before_action :authenticate
 
 	def search
-		results = Business.search(params[:term])
+		results = Business.search(params[:borough], params[:term])
 		render json: results
 	end
 	

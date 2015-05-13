@@ -23,8 +23,9 @@ App.Views.Businesses = Backbone.View.extend({
 	getSearchTerm: function(event) {
 		var clicked = $(event.currentTarget);
 		var term = clicked.attr('data-value');
+		var borough = $('.search-input').val();
 		clicked.toggleClass('clicked');
-		this.collection.search(term);	
+		this.collection.search(borough, term);	
 	}
 
 });
