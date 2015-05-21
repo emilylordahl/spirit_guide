@@ -28,7 +28,7 @@ class Market < ActiveRecord::Base
 			address: address
 		}
 			
-		end
+			end
 
 		p markets
 
