@@ -3,6 +3,7 @@ App.Views.Markets = Backbone.View.extend({
 	el: '#market-container',
 
 	className: 'market',
+
 	tagName: 'div',
 	
 	initialize: function() {
@@ -12,6 +13,7 @@ App.Views.Markets = Backbone.View.extend({
 
 	renderAll: function() {
 		this.$('#market-results').empty();
+		this.$('#search-results').empty();
 		this.collection.each(this.render, this);
 	},
 
@@ -30,7 +32,8 @@ App.Views.Markets = Backbone.View.extend({
 			alert('Please search by boroughs in New York!');
 		} else {
 			clicked.toggleClass('clicked');
-			this.collection.searchBorough(borough);			
+			this.collection.searchBorough(borough);
+			$('.search-input').val('');			
 		}
 	}
 

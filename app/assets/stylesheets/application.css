@@ -14,20 +14,65 @@
  *= require_self
  */
 
+/* --------------------------- */
+/* Body, Structure, Containers */
+/* --------------------------- */
+
 body, html {
-	margin: auto;
-	text-align: center;	
-	font-family: 'Omnes', 'Gotham', 'Helvetica', sans-serif;
-	background-color: #fff;
-	color: silver;
-	letter-spacing: .75px;
-	font-size: 1em;
-	line-height: auto;
+  margin: auto;
+  text-align: center; 
+  font-family: 'Omnes', 'Gotham', 'Helvetica', sans-serif;
+  background-color: #fff;
+  color: silver;
+  letter-spacing: .75px;
+  font-size: 1em;
+  line-height: auto;
+}
+
+#outer-container {
+  margin-top: 150px;
+  z-index: -1;
+}
+
+#circle-container {
+  display: inline-block;
+  width: 90%;
 }
 
 :focus {
   outline: none;
 }
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.content {
+  margin-bottom: 5%;
+}
+
+/* --------------------------- */
+/* Typography, Links */
+/* --------------------------- */
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: silver;
+  transition: ease .5s all;
+}
+
+a:hover {
+  color: palevioletred;
+}
+
+/* --------------------------- */
+/* Header */
+/* --------------------------- */
 
 header {
   background-color: #f8f8f8;
@@ -38,56 +83,31 @@ header {
   height: 115px;
 }
 
-#outer-container {
-  margin-top: 150px;
-  z-index: -1;
-}
-
 h1.spirit-guide {
-	font-size: 48px;
+  font-size: 48px;
   margin: 0px;
   text-align: left;
   padding-left: 10%;
   padding-top: 15px;
 }
 
-.welcome-message {
-  top: 7.5%;
-  text-align: right;
-  padding-right: 10%;
-  margin-top: -15px;	
-}
-
 h2.spirit-guide {
-	font-size: 18px;
+  font-size: 18px;
   margin: 0;
   text-align: left;
   padding-left: 10%;
 }
 
-ul {
-	list-style: none;
-	padding-left: 0px;
+.welcome-message {
+  top: 7.5%;
+  text-align: right;
+  padding-right: 10%;
+  margin-top: -15px;  
 }
 
-h1, h2, h3 {
-	font-weight: 300;
-}
-
-a {
-	text-decoration: none;
-	color: silver;
-	transition: ease .5s all;
-}
-
-a:hover {
-	color: palevioletred;
-}
-
-#circle-container {
-	display: inline-block;
-	width: 90%;
-}
+/* --------------------------- */
+/* Circles */
+/* --------------------------- */
 
 .circles {
 	width: 200px;
@@ -131,6 +151,10 @@ a:hover {
 	color: snow;
 }
 
+/* --------------------------- */
+/* Search Results */
+/* --------------------------- */
+
 .business, .market {
 	width: 25%;
 	margin: 10px auto;
@@ -157,6 +181,10 @@ a:hover {
   text-align: center;
   font-size: 24px;
 }
+
+/* --------------------------- */
+/* Buttons, Inputs */
+/* --------------------------- */
 
 button {
   padding: 7.5px;
@@ -193,10 +221,18 @@ input:hover {
   border: 1px solid teal;
 }
 
+/* --------------------------- */
+/* Profile */
+/* --------------------------- */
+
 h2#current-user {
 	color: palevioletred;
 	font-size: 24px;
 }
+
+/* --------------------------- */
+/* Signup Errors */
+/* --------------------------- */
 
 .field_with_errors input {
   padding: 5px;
