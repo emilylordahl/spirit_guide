@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
 
-	def index
-		render json: User.all
-	end
+	# def index
+	# 	render json: User.all
+	# end
 
 	def show
 		@user = User.find(params[:id])
@@ -13,7 +13,6 @@ class UsersController < ApplicationController
 		end
 
 		p yelp_ids
-
 		
 		respond_to do |format|
 			format.html {}
@@ -56,7 +55,7 @@ class UsersController < ApplicationController
 		end
 	end
 
-	def destory
+	def destroy
 		@user = User.find(params[:id])
 
 		@user.destroy

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'application#index'
   
-  resources :users do 
+  resources :users, except: :index do 
   	member do
   		put 'add_market', as: :add_market_to
   		put 'remove_market', as: :remove_market_from

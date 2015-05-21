@@ -13,7 +13,6 @@ class Business < ActiveRecord::Base
 			yelp_id = biz.id
 			name = biz.name
 			address = biz.location.display_address
-			# phone_number = biz.display_phone
 			website = biz.url
 			rating = biz.rating 
 
@@ -21,15 +20,12 @@ class Business < ActiveRecord::Base
 			yelp_id: yelp_id,
 			name: name,
 			address: address,
-			# phone_number: phone_number,
 			website: website,
 			rating: rating
 		}
-
 		end
 
 		p business_info
-
 	end
 
 	def self.biz_search(yelp_id)
@@ -45,7 +41,6 @@ class Business < ActiveRecord::Base
 		}
 
 		p business
-
 	end
 
 end

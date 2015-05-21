@@ -52,15 +52,15 @@ class BusinessesController < ApplicationController
 		end
 	end
 
-	def edit
-		@business = Business.find(params[:id])
-	end
+	# def edit
+	# 	@business = Business.find(params[:id])
+	# end
 
-	def update
-	end
+	# def update
+	# end
 
-	def destory
-	end
+	# def destory
+	# end
 
 	private
 	def business_params

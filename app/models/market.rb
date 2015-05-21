@@ -26,12 +26,10 @@ class Market < ActiveRecord::Base
 			hours: hours,
 			borough: borough,
 			address: address
-		}
-			
-			end
+		}			
+		end
 
 		p markets
-
 	end
 
 end
