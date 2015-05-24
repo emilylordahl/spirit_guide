@@ -15,4 +15,4 @@
 <% end %>
 
 <br>
-<%= link_to 'Delete Account', user_path(@user), method: :delete %>
+<%= link_to 'Delete Account', user_path(@user), method: :delete, data: { confirm: 'Are you sure you want to delete your account?' } %>

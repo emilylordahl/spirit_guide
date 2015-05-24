@@ -5,25 +5,38 @@
 	<%= link_to 'Logout', logout_path, method: :delete %>
 </p>
 
-<% @user.businesses.each do |business| %>
-	<p>
-		<%= business.yelp_id %>
-		<%= hidden_field :business_id, :value => '#{business.id}' %>
-		<%= form_tag(remove_business_from_user_path(@user), method: 'post') %>
+<section id='profile-results'>
+	<% @user.businesses.each do |business| %>
+		<% biz = Business.biz_search(business.yelp_id) %>
+
+		<div class='business'>
+			<h2><%= biz[:name] %></h2>
+			<ul class='address'>
+				<% biz[:address].each do |address| %>
+					<li><%= address %></li>
+				<% end %>
+		</ul>
+			<p><%= biz[:phone_number] %></p>
+			<p><%= link_to biz[:name], biz[:website], :target => '_blank' %> on Yelp</p>
+			<div>
+				<span>Yelp Rating: 
+					<span id='yelp-rating'><%= biz[:rating] %></span>
+				</span>
+			</div>
+		</div>
+		<%#= hidden_field :business_id, :value => '#{business.id}' %>
+		<%#= form_tag(remove_business_from_user_path(@user), method: 'post') %>
 		<!-- <input type='submit' value='Delete'> -->
-	</p>
-<% end %>
 
-<% @user.markets.each do |market| %>
-	<h2><%= market.name %></h2>
-	<p><%= market.address %></p>
-	<p><%= market.borough %></p>
-	<p><%= market.days_open %></p>
-	<p><%= market.hours %></p>
-<% end %>
+	<% end %>
 
-
-
-
-
-
+	<% @user.markets.each do |market| %>
+		<div class='market'>
+			<h2><%= market.name %></h2>
+			<p>Day(s) open: <%= market.days_open %></p>
+			<p>Hours: <%= market.hours %></p>
+			<p>Location: <%= market.address %></p>
+			<p><%= market.borough %></p>
+		</div>	
+	<% end %>
+</section>

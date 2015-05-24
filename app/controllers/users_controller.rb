@@ -1,18 +1,7 @@
 class UsersController < ApplicationController
 
-	# def index
-	# 	render json: User.all
-	# end
-
 	def show
 		@user = User.find(params[:id])
-		@businesses = @user.businesses
-
-		yelp_ids = @businesses.map do |business|
-			Business.biz_search(business.yelp_id)
-		end
-
-		p yelp_ids
 		
 		respond_to do |format|
 			format.html {}
@@ -89,7 +78,6 @@ class UsersController < ApplicationController
 	def remove_business
 		user = User.find(params[:id])
 		business = Business.find(params[:business_id])
-		binding.pry
 
 		user.remove_business(business)
 

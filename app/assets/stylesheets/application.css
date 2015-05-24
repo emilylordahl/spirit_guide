@@ -52,6 +52,11 @@ ul {
   margin-bottom: 5%;
 }
 
+#profile-results {
+  width: 90%;
+  margin: auto;
+}
+
 /* --------------------------- */
 /* Typography, Links */
 /* --------------------------- */
