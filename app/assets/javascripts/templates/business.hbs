@@ -1,6 +1,6 @@
-<div class='business' id='{{yelp_id}}' data-lat='{{latitude}}' data-long='{{longitude}}'>
+<div class='business' id='{{yelp_id}}'>
 	<h2>{{name}}</h2>
-	<ul class='address'>
+	<ul class='address' data-lat='{{latitude}}' data-long='{{longitude}}'>
 		{{#each address}}
 			<li>{{this}}</li>
 		{{/each}}
@@ -12,5 +12,6 @@
 			<span id='yelp-rating'>{{rating}}</span>
 		</span>
 	</div>
+	<br>
 	<button id='save-business'>Save</button>
 </div>
