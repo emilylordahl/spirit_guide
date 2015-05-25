@@ -41,6 +41,8 @@ class Business < ActiveRecord::Base
 		business = {
 			name: biz.name,
 			address: biz.location.display_address,
+			latitude: biz.location.coordinate.latitude,
+			longitude: biz.location.coordinate.longitude,
 			phone_number: biz.display_phone,
 			website: biz.url,
 			rating: biz.rating

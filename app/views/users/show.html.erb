@@ -11,15 +11,15 @@
 
 		<div class='business'>
 			<h2><%= biz[:name] %></h2>
-			<ul class='address'>
+			<ul class='address' data-lat='<%= biz[:latitude] %>' data-long='<%= biz[:longitude] %>'>
 				<% biz[:address].each do |address| %>
 					<li><%= address %></li>
 				<% end %>
 		</ul>
 			<p><%= biz[:phone_number] %></p>
-			<p><%= link_to biz[:name], biz[:website], :target => '_blank' %> on Yelp</p>
+			<p><%= link_to biz[:name], biz[:website], :target => '_blank' %> on <b>Yelp</b></p>
 			<div>
-				<span>Yelp Rating: 
+				<span><b>Yelp Rating: </b>
 					<span id='yelp-rating'><%= biz[:rating] %></span>
 				</span>
 			</div>
