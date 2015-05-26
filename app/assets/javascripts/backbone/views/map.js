@@ -31,10 +31,6 @@ App.Views.Map = Backbone.View.extend({
       infoWindow.open(this.map, marker)
     });
 
-    setTimeout(function () {       
-      google.maps.event.trigger(map, 'resize');
-    }, 300);
-
   }
 
 });
