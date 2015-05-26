@@ -59,6 +59,10 @@ ul {
   margin: auto;
 }
 
+#google-map {
+  height: 250px;
+}
+
 /* --------------------------- */
 /* Typography, Links */
 /* --------------------------- */
@@ -79,6 +83,15 @@ a:hover {
 
 b {
   font-weight: 600;
+}
+
+.address {
+  transition: ease .5s all;
+}
+
+.address:hover {
+  color: palevioletred;
+  cursor: pointer;
 }
 
 /* --------------------------- */

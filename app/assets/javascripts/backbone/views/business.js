@@ -6,7 +6,8 @@ App.Views.Business = Backbone.View.extend({
 	},
 
 	events: {
-		'click #save-business': 'saveBusiness'
+		'click #save-business': 'saveBusiness',
+		'click .address': 'getLatLong'
 	},
 
 	render: function() {
@@ -15,6 +16,11 @@ App.Views.Business = Backbone.View.extend({
 
 	saveBusiness: function() {
 		this.model.save();
+	},
+
+	getLatLong: function() {
+		mapModel = this.model.toJSON();
+		var newMap = new App.Views.Map({ model: mapModel });
 	}
 
 });
