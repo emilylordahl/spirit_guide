@@ -26,13 +26,12 @@ App.Views.Map = Backbone.View.extend({
       stylers: [
         { visibility: 'on' }
       ]
-    }
-    ];
+    }];
 
     var mapOptions = {
       zoom: 15, 
       center: {lat: parseFloat(this.model.latitude), lng: parseFloat(this.model.longitude)},
-      scrollwheel: false,
+      // scrollwheel: false,
       mapTypeId: MY_MAPTYPE_ID,
       mapTypeControlOptions: {
         mapTypeIds: [google.maps.MapTypeId.ROADMAP, MY_MAPTYPE_ID]
@@ -76,10 +75,9 @@ App.Views.Map = Backbone.View.extend({
       content: '<h2>' + this.model.name + '</h2>' + '<p>' + this.model.address + '</p>'
     });
 
-    google.maps.event.addListener(marker, 'click', function(){
+    google.maps.event.addListener(marker, 'click', function() {
       infoWindow.open(this.map, marker)
     });
-
 
   }
 

@@ -22,7 +22,8 @@ App.Views.Businesses = Backbone.View.extend({
 	},
 
 	events: {
-		'click .yoga, .veg, .juice': 'getSearchTerm'
+		'click .yoga, .veg, .juice': 'getSearchTerm',
+		'keypress .search-input': 'searchByEnter'
 	},
 
 	getSearchTerm: function(event) {
@@ -35,6 +36,12 @@ App.Views.Businesses = Backbone.View.extend({
 			clicked.toggleClass('clicked');
 			this.collection.search(borough, term);
 			$('.search-input').val('');		
+		}
+	},
+
+	searchByEnter: function(e) {
+		if (e.which === 13) {
+			alert('Please click one of the bussinesses or market to search!');
 		}
 	}
 
