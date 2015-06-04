@@ -21,6 +21,7 @@ App.Views.Business = Backbone.View.extend({
 	getLatLong: function() {
 		mapModel = this.model.toJSON();
 		var newMap = new App.Views.Map({ model: mapModel });
+		newMap.show();
 	}
 
 });

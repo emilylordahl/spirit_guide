@@ -27,7 +27,7 @@ App.Views.Map = Backbone.View.extend({
         { visibility: 'on' }
       ]
     }
-  ];
+    ];
 
     var mapOptions = {
       zoom: 15, 
@@ -47,8 +47,22 @@ App.Views.Map = Backbone.View.extend({
 
     this.map = new google.maps.Map(this.el, mapOptions);
     this.map.mapTypes.set(MY_MAPTYPE_ID, customMapType);
-    this.render();
 
+    var hideDiv = document.getElementById('overlay');
+    google.maps.event.addDomListener(hideDiv, 'click', this.hide);
+  },
+
+  show: function() {
+    this.render();
+    this.$el.fadeIn(500);
+    $('#overlay').fadeIn(500).css('display', 'block');
+  },
+
+  hide: function() {
+    var closeMap = document.getElementById('google-map');
+    closeMap.style.display = 'none';
+    var hideOverlay = document.getElementById('overlay');
+    hideOverlay.style.display = 'none';
   },
 
   render: function() {
@@ -65,6 +79,7 @@ App.Views.Map = Backbone.View.extend({
     google.maps.event.addListener(marker, 'click', function(){
       infoWindow.open(this.map, marker)
     });
+
 
   }
 
