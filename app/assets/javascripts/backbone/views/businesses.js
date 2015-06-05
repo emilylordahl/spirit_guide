@@ -33,7 +33,9 @@ App.Views.Businesses = Backbone.View.extend({
 		if (borough === '') {
 			alert('Please search by location!');	
 		} else {
-			clicked.toggleClass('clicked');
+			clicked.toggleClass('clicked', true)
+			       .siblings().removeClass('clicked');
+			$('.farmersmarket').removeClass('clicked');       
 			this.collection.search(borough, term);
 			$('.search-input').val('');		
 		}

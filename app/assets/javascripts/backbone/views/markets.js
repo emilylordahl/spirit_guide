@@ -13,7 +13,9 @@ App.Views.Markets = Backbone.View.extend({
 
 	renderAll: function() {
 		this.$('#market-results').empty();
+		console.log(this.$('#market-results'));
 		this.$('#search-results').empty();
+		console.log(this.$('#search-results'));
 		this.collection.each(this.render, this);
 	},
 
@@ -31,7 +33,8 @@ App.Views.Markets = Backbone.View.extend({
 		if (borough === '') {
 			alert('Please search by boroughs in New York!');
 		} else {
-			clicked.toggleClass('clicked');
+			$('.farmersmarket').toggleClass('clicked', true)
+			                   .parent().siblings().removeClass('clicked');
 			this.collection.searchBorough(borough);
 			$('.search-input').val('');			
 		}
