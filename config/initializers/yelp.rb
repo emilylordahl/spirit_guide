@@ -1,13 +1,13 @@
 require 'yelp'
 
-YOUR_CONSUMER_KEY = '2FtU74xFLOX1XSxj-WoTfg'
-YOUR_CONSUMER_SECRET = 'tFRTS-FfKvqmrAF5FoiH3L51fII'
-YOUR_TOKEN = 'eB0LCgYRp4bHHslyZpCUaCMV2g4cjRgk'
-YOUR_TOKEN_SECRET = 'P_wY_Za4KVcMEECBioUrOAssh4g'
+YELP_CONSUMER_KEY=ENV['YELP_CONSUMER_KEY']
+YELP_CONSUMER_SECRET=ENV['YELP_CONSUMER_SECRET']
+YELP_TOKEN=ENV['YELP_TOKEN']
+YELP_TOKEN_SECRET=ENV['YELP_TOKEN_SECRET']
 
 Yelp.client.configure do |config|
-  config.consumer_key = YOUR_CONSUMER_KEY
-  config.consumer_secret = YOUR_CONSUMER_SECRET
-  config.token = YOUR_TOKEN
-  config.token_secret = YOUR_TOKEN_SECRET
+  config.consumer_key = YELP_CONSUMER_KEY
+  config.consumer_secret = YELP_CONSUMER_SECRET
+  config.token = YELP_TOKEN
+  config.token_secret = YELP_TOKEN_SECRET
 end
