@@ -11,7 +11,7 @@
 
 		<div class='business'>
 			<h2><%= biz[:name] %></h2>
-			<ul class='address' data-lat='<%= biz[:latitude] %>' data-long='<%= biz[:longitude] %>'>
+			<ul class='profile-address' data-lat='<%= biz[:latitude] %>' data-long='<%= biz[:longitude] %>'>
 				<% biz[:address].each do |address| %>
 					<li><%= address %></li>
 				<% end %>
