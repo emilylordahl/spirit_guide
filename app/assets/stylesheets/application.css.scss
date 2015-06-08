@@ -17,24 +17,24 @@
 
 @font-face {
     font-family: 'Omnes';
-    src: url('omnes-regular-webfont.eot');
-    src: url('omnes-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('omnes-regular-webfont.woff2') format('woff2'),
-         url('omnes-regular-webfont.woff') format('woff'),
-         url('omnes-regular-webfont.ttf') format('truetype'),
-         url('omnes-regular-webfont.svg#omnes_regularregular') format('svg');
+    src: font-url('omnes-regular-webfont.eot');
+    src: font-url('omnes-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('omnes-regular-webfont.woff2') format('woff2'),
+         font-url('omnes-regular-webfont.woff') format('woff'),
+         font-url('omnes-regular-webfont.ttf') format('truetype'),
+         font-url('omnes-regular-webfont.svg#omnes_regularregular') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Omnes';
-    src: url('omnes-semibold-webfont.eot');
-    src: url('omnes-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('omnes-semibold-webfont.woff2') format('woff2'),
-         url('omnes-semibold-webfont.woff') format('woff'),
-         url('omnes-semibold-webfont.ttf') format('truetype'),
-         url('omnes-semibold-webfont.svg#omnessemibold') format('svg');
+    src: font-url('omnes-semibold-webfont.eot');
+    src: font-url('omnes-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('omnes-semibold-webfont.woff2') format('woff2'),
+         font-url('omnes-semibold-webfont.woff') format('woff'),
+         font-url('omnes-semibold-webfont.ttf') format('truetype'),
+         font-url('omnes-semibold-webfont.svg#omnessemibold') format('svg');
     font-weight: 600;
     font-style: normal;
 }
