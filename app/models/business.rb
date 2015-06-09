@@ -43,7 +43,7 @@ class Business < ActiveRecord::Base
 			address: biz.location.display_address,
 			latitude: biz.location.coordinate.latitude,
 			longitude: biz.location.coordinate.longitude,
-			phone_number: biz.display_phone,
+			# phone_number: biz.display_phone,
 			website: biz.url,
 			rating: biz.rating
 		}

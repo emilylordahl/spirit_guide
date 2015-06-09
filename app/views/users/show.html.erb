@@ -28,10 +28,8 @@
 					<span id='yelp-rating'><%= biz[:rating] %></span>
 				</span>
 			</div>
+		<%= button_to 'Delete', {:controller => :businesses, :action => 'destroy', :id => business.id }, :method => :delete %>
 		</div>
-		<%#= hidden_field :business_id, :value => '#{business.id}' %>
-		<%#= form_tag(remove_business_from_user_path(@user), method: 'post') %>
-		<!-- <input type='submit' value='Delete'> -->
 
 	<% end %>
 
@@ -42,6 +40,7 @@
 			<p><b>Hours: </b><%= market.hours %></p>
 			<p><b>Location: </b><%= market.address %></p>
 			<p><%= market.borough %></p>
+			<%= button_to 'Delete', {:controller => :markets, :action => 'destroy', :id => market.id }, :method => :delete %>
 		</div>	
 	<% end %>
 </section>

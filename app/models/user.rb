@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 	
 	has_secure_password
-	has_and_belongs_to_many :businesses
-	has_and_belongs_to_many :markets
+	has_and_belongs_to_many :businesses, dependent: :destroy
+	has_and_belongs_to_many :markets, dependent: :destroy
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true	

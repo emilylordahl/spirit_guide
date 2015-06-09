@@ -21,19 +21,6 @@ class BusinessesController < ApplicationController
 		end
 	end
 
-	def show
-		@business = Business.find(params[:id])
-
-		respond_to do |format|
-			format.html {}
-			format.json { render json: @business }
-		end
-	end
-
-	def new
-		@business = Business.new
-	end
-
 	def create
 		
 		@business = Business.find_by(business_params)
@@ -52,15 +39,21 @@ class BusinessesController < ApplicationController
 		end
 	end
 
-	# def edit
-	# 	@business = Business.find(params[:id])
-	# end
+	def destroy
+	
+		@business = Business.find(params[:id])
+		@user = current_user
 
-	# def update
-	# end
+		p '====================================='
+		p current_user
+		p '====================================='
 
-	# def destory
-	# end
+		if current_user
+			current_user.remove_business(@business)
+			render 'users/show'
+		end
+
+	end
 
 	private
 	def business_params

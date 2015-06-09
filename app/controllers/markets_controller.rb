@@ -16,19 +16,6 @@ class MarketsController < ApplicationController
 		end
 	end
 
-	def show
-		@market = Market.find(params[:id])
-
-		respond_to do |format|
-			format.html {}
-			format.json { render json: @markets }
-		end
-	end
-
-	def new
-		@market = Market.new
-	end
-
 	def create
 
 		@market = Market.find_by(market_params)
@@ -47,21 +34,14 @@ class MarketsController < ApplicationController
 		end
 	end
 
-	# def edit
-	# 	@market = Market.find(params[:id])
-	# end
-
-	# def update
-	# end
-
-	def destory
+	def destroy
 	
-		@market = Market.find_by(market_params)
+		@market = Market.find(params[:id])
 
 		if current_user
 			current_user.remove_market(@market)
+			render 'users/show'
 		end
-
 	end
 
 	private
