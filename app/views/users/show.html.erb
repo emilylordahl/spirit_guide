@@ -10,7 +10,6 @@
 	<%= link_to 'Logout', logout_path, method: :delete %>
 </p>
 
-
 <section id='profile-results'>
 	<% @user.businesses.each do |business| %>
 		<% biz = Business.biz_search(business.yelp_id) %>
@@ -39,9 +38,9 @@
 	<% @user.markets.each do |market| %>
 		<div class='market'>
 			<h2><%= market.name %></h2>
-			<p>Day(s) open: <%= market.days_open %></p>
-			<p>Hours: <%= market.hours %></p>
-			<p>Location: <%= market.address %></p>
+			<p><b>Day(s) open: </b><%= market.days_open %></p>
+			<p><b>Hours: </b><%= market.hours %></p>
+			<p><b>Location: </b><%= market.address %></p>
 			<p><%= market.borough %></p>
 		</div>	
 	<% end %>

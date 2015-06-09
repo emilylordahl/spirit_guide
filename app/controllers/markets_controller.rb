@@ -54,8 +54,15 @@ class MarketsController < ApplicationController
 	# def update
 	# end
 
-	# def destory
-	# end
+	def destory
+	
+		@market = Market.find_by(market_params)
+
+		if current_user
+			current_user.remove_market(@market)
+		end
+
+	end
 
 	private
 	def market_params

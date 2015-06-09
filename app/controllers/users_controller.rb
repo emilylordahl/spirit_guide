@@ -59,38 +59,6 @@ class UsersController < ApplicationController
 		end
 	end
 
-	# def add_market
-	# 	user = User.find(params[:id])
-	# end
-
-	# def remove_market
-	# 	user = User.find(params[:id])
-	# end
-
-	def add_business
-		user = User.find(params[:id])
-		business = Business.find(params[:id])
-
-		user.add_business(business)
-
-		respond_to do |format|
-			format.html { redirect_to user_path(user) }
-			format.json { render json: @user }
-		end
-	end
-
-	def remove_business
-		user = User.find(params[:id])
-		business = Business.find(params[:business_id])
-
-		user.remove_business(business)
-
-		respond_to do |format|
-			format.html { redirect_to user_path(user) }
-			format.json { render json: @user }
-		end
-	end
-
 	private
 	def user_params
 		params.require(:user).permit(:first_name,:last_name,:email,:password,:password_confirmation)
