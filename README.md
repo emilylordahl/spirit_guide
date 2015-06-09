@@ -1,5 +1,3 @@
-# This is a test
-
 # SpiritGuide
 WDI Project 3 (solo)
 
