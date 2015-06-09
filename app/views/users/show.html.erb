@@ -1,9 +1,15 @@
 <h2 id='current-user'><%= current_user.first_name %>'s Saved Places</h2>
+
+<% if flash[:notice] %>
+    <p class='notice'><%= flash[:notice] %></p>
+<% end %>
+
 <p>	
 	<%= link_to 'Edit Profile', edit_user_path %> |  
 	<%= link_to 'Back', root_path %> | 
 	<%= link_to 'Logout', logout_path, method: :delete %>
 </p>
+
 
 <section id='profile-results'>
 	<% @user.businesses.each do |business| %>

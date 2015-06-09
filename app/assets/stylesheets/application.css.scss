@@ -304,10 +304,24 @@ h2#current-user {
 }
 
 /* --------------------------- */
-/* Signup Errors */
+/* Errors */
 /* --------------------------- */
 
 .field_with_errors input {
-  padding: 5px;
-  border: 3px solid palevioletred;
+  border: 2px solid palevioletred;
+}
+
+.notice {
+  width: auto;
+  display: inline-block;
+  padding: 1%;
+  border: 2px solid palevioletred;
+  border-radius: 10px;
+  margin: 0 auto 15px;
+  background-color: lightpink;
+  color: white;
+}
+
+#error_explanation {
+  color: palevioletred;
 }

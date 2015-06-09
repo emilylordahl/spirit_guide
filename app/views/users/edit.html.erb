@@ -1,4 +1,16 @@
 <h2>Edit Profile</h2>
+
+<% if @user.errors.any? %>
+  <div id='error_explanation'>
+    <p><%= pluralize(@user.errors.count, 'error') %> prohibited this account from being updated:</p>
+    <ul class='notice'>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_for @user do |f| %>
 	
 	<%= f.label :first_name %><br>

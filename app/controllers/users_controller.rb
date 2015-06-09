@@ -35,12 +35,16 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-
+		
 		@user.update(user_params)
+		@user.skip_password_validation = true
+		@user.skip_password_confirmation_validation = true
 
-		respond_to do |format|
-			format.html { redirect_to user_path(@user.id) }
-			format.json { render json: @user }
+		if @user.save
+			flash[:notice] = 'Your profile has been updated.'
+			redirect_to user_path(@user.id)
+		else
+			render :edit
 		end
 	end
 

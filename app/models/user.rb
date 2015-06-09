@@ -8,9 +8,13 @@ class User < ActiveRecord::Base
 	validates :last_name, presence: true	
 	validates :email, presence: true
 	validates :email, uniqueness: true
-	validates :password, presence: true, length: { minimum: 8 }
-	validates :password_confirmation, presence: true
+	validates :password, presence: true, length: { minimum: 8 }, 
+		unless: :skip_password_validation
+	validates :password_confirmation, presence: true, 
+		unless: :skip_password_confirmation_validation
 	validates :password_confirmation, confirmation: true
+
+	attr_accessor :skip_password_validation, :skip_password_confirmation_validation
 
 	def add_market(market)
 		self.markets.push(market) unless self.markets.include? market

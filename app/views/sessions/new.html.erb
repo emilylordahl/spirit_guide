@@ -1,5 +1,9 @@
 <h2>Login</h2>
 
+<% if flash[:notice] %>
+    <p class='notice'><%= flash[:notice] %></p>
+<% end %>
+
 <%= form_tag '/sessions' do %>
 
 	<%= label_tag :email %><br>

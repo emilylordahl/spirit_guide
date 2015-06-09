@@ -12,12 +12,14 @@ class SessionsController < ApplicationController
 			session[:current_user] = user.id
 			redirect_to root_path
 		else
+			flash[:notice] = 'Incorrect login credentials. Please try again.'
 			render :new
 		end
 	end
 
 	def destroy
 		session[:current_user] = nil
+		flash[:notice] = 'Successfully logged out.'
 		redirect_to login_path
 	end
 
