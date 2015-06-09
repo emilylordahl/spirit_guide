@@ -42,6 +42,9 @@ gem 'backbars', '~> 0.0.11'
 
 gem 'rails_12factor', group: :production
 
+# An email validator for Rails 3 and 4
+gem 'email_validator'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   # gem 'byebug'

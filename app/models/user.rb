@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
 	validates :last_name, presence: true	
 	validates :email, presence: true
 	validates :email, uniqueness: true
+	validates :email, :email => {:strict_mode => true}
 	validates :password, presence: true, length: { minimum: 8 }, 
 		unless: :skip_password_validation
 	validates :password_confirmation, presence: true, 
