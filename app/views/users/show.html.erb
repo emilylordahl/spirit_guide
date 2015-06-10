@@ -40,7 +40,7 @@
 			<p><b>Hours: </b><%= market.hours %></p>
 			<p><b>Location: </b><%= market.address %></p>
 			<p><%= market.borough %></p>
-			<%= button_to 'Delete', {:controller => :markets, :action => 'destroy', :id => market.id }, :method => :delete %>
+			<%#= button_to 'Delete', {:controller => :markets, :action => 'destroy', :id => market.id }, :method => :delete %>
 		</div>	
 	<% end %>
 </section>
