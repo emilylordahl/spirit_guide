@@ -23,12 +23,12 @@
 		</ul>
 			<p><%= biz[:phone_number] %></p>
 			<p><%= link_to biz[:name], biz[:website], :target => '_blank' %> on <b>Yelp</b></p>
-			<div>
+			<div class='yelp'>
 				<span><b>Yelp Rating: </b>
 					<span id='yelp-rating'><%= biz[:rating] %></span>
 				</span>
+				<%= button_to 'Delete', {:controller => :businesses, :action => 'destroy', :id => business.id }, :class => 'button delete-business', :method => :delete %>
 			</div>
-		<%= button_to 'Delete', {:controller => :businesses, :action => 'destroy', :id => business.id }, :method => :delete %>
 		</div>
 
 	<% end %>

@@ -241,6 +241,10 @@ h2.spirit-guide {
   text-align: center;
 }
 
+.yelp {
+  margin: 5% 0 5% 0;
+}
+
 #yelp-rating {
 	background-color: pink;
   width: 50px;
@@ -259,7 +263,7 @@ h2.spirit-guide {
 /* Buttons, Inputs */
 /* --------------------------- */
 
-button {
+button, .button {
   padding: 7.5px;
   border: 2px solid silver;
   font-family: 'Omnes', 'Quicksand', 'Gotham', 'Helvetica', sans-serif;
@@ -267,13 +271,29 @@ button {
   color: palevioletred;
   letter-spacing: .5px;
   background-color: snow;
-  border-radius: 10%;
+  border-radius: 5px;
   transition: all .75s ease;
+  width: auto;
 }
 
-button:hover{
-	border: 2px solid pink;
+button:hover, .button:hover {
+	border: 2px solid palevioletred;
+  background-color: pink;
+  color: white;
 	cursor: pointer;
+}
+
+#save-business {
+  float: right;
+  margin-top: 2.5%;
+  margin-right: 2.5%;
+}
+
+.delete-business {
+  float: right;
+  margin-right: 2.5%;
+  margin-top: -15.5%;
+
 }
 
 input {
