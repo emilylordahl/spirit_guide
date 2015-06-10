@@ -30,7 +30,7 @@ class BusinessesController < ApplicationController
 		end
 
 		if current_user
-			current_user.add_business(@business)		
+			current_user.add_business(@business)
 		end
 
 		respond_to do |format|
@@ -43,10 +43,6 @@ class BusinessesController < ApplicationController
 	
 		@business = Business.find(params[:id])
 		@user = current_user
-
-		p '====================================='
-		p current_user
-		p '====================================='
 
 		if current_user
 			current_user.remove_business(@business)
