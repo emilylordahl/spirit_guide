@@ -168,10 +168,11 @@ h2.spirit-guide {
 }
 
 .welcome-message {
-  top: 7.5%;
   text-align: right;
   padding-right: 10%;
-  margin-top: -20px;  
+  margin-top: -22px;
+  font-size: 18px;
+
 }
 
 /* --------------------------- */
@@ -179,13 +180,11 @@ h2.spirit-guide {
 /* --------------------------- */
 
 .circles {
-	width: 200px;
-	height: 200px;
-	border-radius: 100%;
+	width: 17%;
+	border-radius: 50%;
 	color: snow;
 	text-align: center;
-	vertical-align: center;
-	line-height: 200px;
+	line-height: 220px;
 	font-weight: 300;
 	font-size: 24px;
 	margin: 4%;
@@ -247,11 +246,10 @@ h2.spirit-guide {
 
 #yelp-rating {
 	background-color: pink;
-  width: 50px;
-  height: 50px;
-  padding: 1px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
-  line-height: 50px;
+  line-height: 45px;
   color: snow;
   font-weight: 600;
   display: inline-block;
@@ -293,7 +291,6 @@ button:hover, .button:hover {
   float: right;
   margin-right: 2.5%;
   margin-top: -15.5%;
-
 }
 
 input {
@@ -345,3 +342,108 @@ h2#current-user {
 #error_explanation {
   color: palevioletred;
 }
+
+/* --------------------------- */
+/* Media Queries */
+/* --------------------------- */
+
+@media (max-width: 1350px) {
+  .circles {
+    line-height: 205px;
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 1275px) {
+  .circles {
+    line-height: 195px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .circles {
+    line-height: 185px;
+  }
+
+  .business, .market {
+    width: 30%;
+  }
+
+  .business h2, .market h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1125px) {
+  .circles {
+    line-height: 175px;
+  }
+}
+
+@media (max-width: 1075px) {
+  #circle-container {
+    width: 95%;
+  }    
+
+  .circles {
+    line-height: 195px;
+    margin: 3%;
+    font-size: 22px;
+    width: 19%;
+  }
+
+  input {
+    width: 50%;
+  }
+}
+
+@media (max-width: 965px) {
+  .circles {
+    line-height: 165px;
+    font-size: 18px;
+  }
+
+  #google-map {
+    width: 70% !important;
+    left: 15% !important;
+  }
+}
+
+@media (max-width: 900px) {
+  h1.spirit-guide {
+    font-size: 48px;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 7.5%;
+  }
+
+  h2.spirit-guide {
+    display: none;
+  }
+
+  .welcome-message {
+    text-align: center;
+    padding-right: 0;
+    margin-top: -7.75%;
+  }
+}
+
+@media (max-width: 500px) {
+  h1.spirit-guide {
+    font-size: 36px;
+  }
+
+  h2.spirit-guide {
+    display: none;
+  }
+
+  #outer-container {
+    margin-top: 135px;
+  }
+
+  input {
+    width: 70%;
+  }
+}
+

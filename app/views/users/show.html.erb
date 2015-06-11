@@ -4,6 +4,10 @@
     <p class='notice'><%= flash[:notice] %></p>
 <% end %>
 
+<% if current_user %>
+	
+<% end %>
+
 <p>	
 	<%= link_to 'Edit Profile', edit_user_path %> |  
 	<%= link_to 'Back', root_path %> | 
