@@ -276,8 +276,6 @@ button, .button {
 
 button:hover, .button:hover {
 	border: 2px solid palevioletred;
-  background-color: pink;
-  color: white;
 	cursor: pointer;
 }
 
@@ -429,7 +427,96 @@ h2#current-user {
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 820px) {
+  .circles {
+    line-height: 235px;
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0;
+    font-size: 25px;
+  }
+
+  #outer-container {
+    margin-top: 135px;
+  }
+
+  #circle-container {
+    width: 75%;
+  }
+
+  .business, .market {
+    width: 45%;
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 725px) {
+  .circles {
+    line-height: 215px;
+  }
+}
+
+@media (max-width: 660px) {
+  .circles {
+    line-height: 200px;
+    font-size: 20px;
+  }
+
+  input {
+    width: 70%;
+  }
+
+  .business, .market {
+    width: 90%;
+    margin: 2.5% auto;
+    height: auto;
+  }
+
+  .address, .profile-address {
+    width: 50%;
+    display: inline-block;
+    margin-top: 0;
+  }
+
+  .yelp-link {
+    position: absolute;
+    width: 30%;
+    margin-left: 5%;
+  }
+
+  .profile-yelp-link {
+    margin: 0;
+  }
+
+  .yelp {
+    margin: 0;
+  }
+
+  #save-business {
+    margin-top: 1.0625%;
+  }
+
+  .delete-business {
+    margin-top: -10%;
+  }
+} 
+
+@media (max-width: 600px) {
+  .circles {
+    line-height: 180px;
+    font-size: 20px;
+  }
+} 
+
+@media (max-width: 510px) {
+  .circles {
+    line-height: 155px;
+    font-size: 18px;
+  }
+} 
+
+@media only screen and (max-width: 480px) {
   h1.spirit-guide {
     font-size: 36px;
   }
@@ -437,13 +524,27 @@ h2#current-user {
   h2.spirit-guide {
     display: none;
   }
-
-  #outer-container {
-    margin-top: 135px;
+  
+  #circle-container {
+    width: 75%;
+  }
+  
+  input {
+    width: 90%;
   }
 
-  input {
-    width: 70%;
+  .circles {
+  width: 70%;
+  margin-left: 15%;
+  line-height: 245px;
+  font-size: 22px;
   }
 }
+
+@media (max-width: 510px) {
+  .circles {
+    line-height: 225px;
+    font-size: 25px;
+  }
+} 
 
