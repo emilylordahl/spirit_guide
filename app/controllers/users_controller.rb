@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
 	def show
 		@user = User.find(params[:id])
-		
+
 		respond_to do |format|
 			format.html {}
 			format.json { render json: @user }
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		
+
 		@user.update(user_params)
 		@user.skip_password_validation = true
 		@user.skip_password_confirmation_validation = true

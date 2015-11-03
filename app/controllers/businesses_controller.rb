@@ -11,7 +11,7 @@ class BusinessesController < ApplicationController
 		results = Business.biz_search(@business.yelp_id)
 		render json: results
 	end
-	
+
 	def index
 		@businesses = Business.all
 
@@ -22,9 +22,9 @@ class BusinessesController < ApplicationController
 	end
 
 	def create
-		
+
 		@business = Business.find_by(business_params)
-		
+
 		if @business.nil?
 			@business = Business.create(business_params)
 		end
@@ -40,7 +40,7 @@ class BusinessesController < ApplicationController
 	end
 
 	def destroy
-	
+
 		@business = Business.find(params[:id])
 		@user = current_user
 

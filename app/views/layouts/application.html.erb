@@ -13,8 +13,8 @@
 	<a href='/'><h1 class='spirit-guide'>SpiritGuide</h1></a>
 	<h2 class='spirit-guide'>Find places so good, you literally can't even.</h2>
 	<% if current_user %>
-		<p class='welcome-message'>Welcome back, <%= current_user.first_name %>! | 
-		<b><%= link_to 'Profile', user_path(current_user.id) %></b> | 
+		<p class='welcome-message'>Welcome back, <%= current_user.first_name %>! |
+		<b><%= link_to 'Profile', user_path(current_user.id) %></b> |
 		<%= link_to 'Logout', logout_path, method: :delete %>
 		</p>
 </header>
@@ -36,7 +36,7 @@
 		</section>
 	</div>
 	<% else %>
-		<%= link_to 'Sign Up', new_user_path %> | 
+		<%= link_to 'Sign Up', new_user_path %> |
 		<%= link_to 'Login', login_path %>
 	<% end %>
 

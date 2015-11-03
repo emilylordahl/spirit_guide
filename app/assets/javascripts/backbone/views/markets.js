@@ -5,17 +5,15 @@ App.Views.Markets = Backbone.View.extend({
 	className: 'market',
 
 	tagName: 'div',
-	
+
 	initialize: function() {
 		this.listenTo(this.collection, 'reset', this.renderAll);
 		this.listenTo(this.collection, 'add', this.render);
 	},
 
 	renderAll: function() {
-		this.$('#market-results').empty();
-		console.log(this.$('#market-results'));
-		this.$('#search-results').empty();
-		console.log(this.$('#search-results'));
+		$('#market-results').empty();
+		$('#search-results').empty();
 		this.collection.each(this.render, this);
 	},
 
@@ -24,7 +22,7 @@ App.Views.Markets = Backbone.View.extend({
 	},
 
 	events: {
-		'click .farmersmarket': 'getBorough'	
+		'click .farmersmarket': 'getBorough'
 	},
 
 	getBorough: function(event) {
@@ -36,7 +34,7 @@ App.Views.Markets = Backbone.View.extend({
 			$('.farmersmarket').toggleClass('clicked', true)
 			                   .parent().siblings().removeClass('clicked');
 			this.collection.searchBorough(borough);
-			$('.search-input').val('');			
+			$('.search-input').val('');
 		}
 	}
 

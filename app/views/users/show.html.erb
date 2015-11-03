@@ -5,12 +5,12 @@
 <% end %>
 
 <% if current_user %>
-	
+
 <% end %>
 
-<p>	
-	<%= link_to 'Edit Profile', edit_user_path %> |  
-	<%= link_to 'Back', root_path %> | 
+<p>
+	<%= link_to 'Edit Profile', edit_user_path %> |
+	<%= link_to 'Back', root_path %> |
 	<%= link_to 'Logout', logout_path, method: :delete %>
 </p>
 
@@ -44,6 +44,6 @@
 			<p><b>Location: </b><%= market.address %></p>
 			<p><%= market.borough %></p>
 			<%#= button_to 'Delete', {:controller => :markets, :action => 'destroy', :id => market.id }, :method => :delete %>
-		</div>	
+		</div>
 	<% end %>
 </section>

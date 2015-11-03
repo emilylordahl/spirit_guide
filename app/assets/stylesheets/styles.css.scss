@@ -1,0 +1,537 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand:300,400,700);
+
+@font-face {
+    font-family: 'Omnes';
+    src: font-url('omnes-regular-webfont.eot');
+    src: font-url('omnes-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('omnes-regular-webfont.woff2') format('woff2'),
+         font-url('omnes-regular-webfont.woff') format('woff'),
+         font-url('omnes-regular-webfont.ttf') format('truetype'),
+         font-url('omnes-regular-webfont.svg#omnes_regularregular') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Omnes';
+    src: font-url('omnes-semibold-webfont.eot');
+    src: font-url('omnes-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         font-url('omnes-semibold-webfont.woff2') format('woff2'),
+         font-url('omnes-semibold-webfont.woff') format('woff'),
+         font-url('omnes-semibold-webfont.ttf') format('truetype'),
+         font-url('omnes-semibold-webfont.svg#omnessemibold') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* --------------------------- */
+/* Body, Structure, Containers */
+/* --------------------------- */
+
+body, html {
+  margin: auto;
+  text-align: center;
+  font-family: 'Omnes', 'Quicksand', 'Gotham', 'Helvetica', sans-serif;
+  background-color: #fff;
+  color: silver;
+  letter-spacing: .75px;
+  font-size: 1em;
+  line-height: auto;
+}
+
+#outer-container {
+  margin-top: 150px;
+  z-index: -1;
+}
+
+#circle-container {
+  display: inline-block;
+  width: 90%;
+}
+
+:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.content {
+  margin-bottom: 5%;
+}
+
+#profile-results {
+  width: 90%;
+  margin: auto;
+}
+
+/* --------------------------- */
+/* Google Map Modal */
+/* --------------------------- */
+
+#google-map {
+  display: none;
+  position: fixed !important;
+  left: 25% !important;
+  top: 25% !important;
+  height: 500px !important;
+  width: 50% !important;
+  z-index: 100 !important;
+  border: 2px solid snow !important;
+}
+
+#overlay {
+  display: none;
+  background: rgba(0,0,0,.35);
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/* --------------------------- */
+/* Typography, Links */
+/* --------------------------- */
+
+h1, h2, h3 {
+  font-weight: 300;
+}
+
+a {
+  text-decoration: none;
+  color: silver;
+  transition: ease .5s all;
+}
+
+a:hover {
+  color: palevioletred;
+}
+
+b {
+  font-weight: 600;
+}
+
+.address {
+  transition: ease .5s all;
+}
+
+.address:hover {
+  color: palevioletred;
+  cursor: pointer;
+}
+
+/* --------------------------- */
+/* Header */
+/* --------------------------- */
+
+header {
+  background-color: #f8f8f8;
+  top: 0px;
+  position: fixed;
+  width: 100%;
+  margin-bottom: 20px;
+  height: 115px;
+  z-index: 200;
+}
+
+h1.spirit-guide {
+  font-size: 48px;
+  margin: 0px;
+  text-align: left;
+  padding-left: 10%;
+  padding-top: 15px;
+}
+
+h2.spirit-guide {
+  font-size: 18px;
+  margin: 0;
+  text-align: left;
+  padding-left: 10%;
+}
+
+.welcome-message {
+  text-align: right;
+  padding-right: 10%;
+  margin-top: -22px;
+  font-size: 18px;
+
+}
+
+/* --------------------------- */
+/* Circles */
+/* --------------------------- */
+
+.circles {
+	width: 17%;
+	border-radius: 50%;
+	color: snow;
+	text-align: center;
+	line-height: 220px;
+	font-weight: 300;
+	font-size: 24px;
+	margin: 4%;
+	float: left;
+	display: inline-block;
+	transition: ease .5s all;
+}
+
+.circles:hover {
+	cursor: pointer;
+	opacity: .75;
+}
+
+.yoga {
+	background-color: #BDF2DF;
+}
+
+.veg {
+	background-color: #A0D9C4;
+}
+
+.juice {
+	background-color: #D1D9C1;
+}
+
+.farmersmarket {
+	background-color: #F2E2CE;
+}
+
+.clicked {
+	background-color: palevioletred;
+	color: snow;
+}
+
+/* --------------------------- */
+/* Search Results */
+/* --------------------------- */
+
+.business, .market {
+	width: 22%;
+	margin: 10px auto;
+	float: left;
+	display: inline-block;
+	height: 250px;
+	text-align: left;
+  padding-left: 1.5%;
+  padding-right: 1.5%;
+}
+
+.business h2, .market h2 {
+	color: palevioletred;
+  border-bottom: 1px dotted palevioletred;
+  text-align: center;
+}
+
+.yelp {
+  margin: 5% 0 5% 0;
+}
+
+#yelp-rating {
+	background-color: pink;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  line-height: 45px;
+  color: snow;
+  font-weight: 600;
+  display: inline-block;
+  text-align: center;
+  font-size: 24px;
+}
+
+/* --------------------------- */
+/* Buttons, Inputs */
+/* --------------------------- */
+
+button, .button {
+  padding: 7.5px;
+  border: 2px solid silver;
+  font-family: 'Omnes', 'Quicksand', 'Gotham', 'Helvetica', sans-serif;
+  font-size: 15px;
+  color: palevioletred;
+  letter-spacing: .5px;
+  background-color: snow;
+  border-radius: 5px;
+  transition: all .75s ease;
+  width: auto;
+}
+
+button:hover, .button:hover {
+	border: 2px solid palevioletred;
+	cursor: pointer;
+}
+
+#save-business {
+  float: right;
+  margin-top: 2.5%;
+  margin-right: 2.5%;
+}
+
+.delete-business {
+  float: right;
+  margin-right: 2.5%;
+  margin-top: -15.5%;
+}
+
+input {
+  padding: 10px;
+  text-align: center;
+  font-family: 'Omnes', 'Quicksand', 'Gotham', 'Helvetica', sans-serif;
+  font-size: 15px;
+  width: 30%;
+  border: 1px solid silver;
+  transition: all .75s ease;
+  border-radius: 10px;
+  color: teal;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+input:hover {
+  border: 1px solid teal;
+}
+
+/* --------------------------- */
+/* Profile */
+/* --------------------------- */
+
+h2#current-user {
+	color: palevioletred;
+	font-size: 24px;
+}
+
+/* --------------------------- */
+/* Errors */
+/* --------------------------- */
+
+.field_with_errors input {
+  border: 2px solid palevioletred;
+}
+
+.notice {
+  width: auto;
+  display: inline-block;
+  padding: 1%;
+  border: 2px solid palevioletred;
+  border-radius: 10px;
+  margin: 0 auto 15px;
+  background-color: lightpink;
+  color: white;
+}
+
+#error_explanation {
+  color: palevioletred;
+}
+
+/* --------------------------- */
+/* Media Queries */
+/* --------------------------- */
+
+// @media only screen and (max-device-width: 480px)
+
+
+@media only screen and (max-device-width: 1350px) {
+  .circles {
+    line-height: 205px;
+    font-size: 22px;
+  }
+}
+
+@media only screen and (max-device-width: 1275px) {
+  .circles {
+    line-height: 195px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 1200px) {
+  .circles {
+    line-height: 185px;
+  }
+
+  .business, .market {
+    width: 30%;
+  }
+
+  .business h2, .market h2 {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 1125px) {
+  .circles {
+    line-height: 175px;
+  }
+}
+
+@media only screen and (max-device-width: 1075px) {
+  #circle-container {
+    width: 95%;
+  }
+
+  .circles {
+    line-height: 195px;
+    margin: 3%;
+    font-size: 22px;
+    width: 19%;
+  }
+
+  input {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-device-width: 965px) {
+  .circles {
+    line-height: 165px;
+    font-size: 18px;
+  }
+
+  #google-map {
+    width: 70% !important;
+    left: 15% !important;
+  }
+}
+
+@media only screen and (max-device-width: 900px) {
+  h1.spirit-guide {
+    font-size: 48px;
+    text-align: center;
+    padding-left: 0;
+    margin-bottom: 7.5%;
+  }
+
+  h2.spirit-guide {
+    display: none;
+  }
+
+  .welcome-message {
+    text-align: center;
+    padding-right: 0;
+    margin-top: -7.75%;
+  }
+}
+
+@media only screen and (max-device-width: 820px) {
+  .circles {
+    line-height: 235px;
+    width: 40%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 0;
+    font-size: 25px;
+  }
+
+  #outer-container {
+    margin-top: 135px;
+  }
+
+  #circle-container {
+    width: 75%;
+  }
+
+  .business, .market {
+    width: 45%;
+    margin-left: 2%;
+  }
+}
+
+@media only screen and (max-device-width: 725px) {
+  .circles {
+    line-height: 215px;
+  }
+}
+
+@media only screen and (max-device-width: 660px) {
+  .circles {
+    line-height: 200px;
+    font-size: 20px;
+  }
+
+  input {
+    width: 70%;
+  }
+
+  .business, .market {
+    width: 90%;
+    margin: 2.5% auto;
+    height: auto;
+  }
+
+  .address, .profile-address {
+    width: 50%;
+    display: inline-block;
+    margin-top: 0;
+  }
+
+  .yelp-link {
+    position: absolute;
+    width: 30%;
+    margin-left: 5%;
+  }
+
+  .profile-yelp-link {
+    margin: 0;
+  }
+
+  .yelp {
+    margin: 0;
+  }
+
+  #save-business {
+    margin-top: 1.0625%;
+  }
+
+  .delete-business {
+    margin-top: -10%;
+  }
+}
+
+@media only screen and (max-device-width: 600px) {
+  .circles {
+    line-height: 180px;
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-device-width: 510px) {
+  .circles {
+    line-height: 155px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-device-width: 480px) {
+  h1.spirit-guide {
+    font-size: 36px;
+  }
+
+  h2.spirit-guide {
+    display: none;
+  }
+
+  #circle-container {
+    width: 75%;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  .circles {
+  width: 70%;
+  margin-left: 15%;
+  line-height: 245px;
+  font-size: 22px;
+  }
+}
+
+@media only screen and (max-device-width: 510px) {
+  .circles {
+    line-height: 225px;
+    font-size: 25px;
+  }
+}

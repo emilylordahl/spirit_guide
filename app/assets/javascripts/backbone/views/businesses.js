@@ -12,13 +12,13 @@ App.Views.Businesses = Backbone.View.extend({
 	},
 
 	renderAll: function() {
-		this.$('#market-results').empty();
-		this.$('#search-results').empty();
+		$('#market-results').empty();
+		$('#search-results').empty();
 		this.collection.each(this.render, this);
 	},
 
 	render: function(business) {
-		this.$('#search-results').append(new App.Views.Business({  model: business }).$el);	
+		this.$('#search-results').append(new App.Views.Business({  model: business }).$el);
 	},
 
 	events: {
@@ -31,13 +31,13 @@ App.Views.Businesses = Backbone.View.extend({
 		var term = clicked.attr('data-value');
 		var borough = $('.search-input').val();
 		if (borough === '') {
-			alert('Please search by location!');	
+			alert('Please search by location!');
 		} else {
 			clicked.toggleClass('clicked', true)
 			       .siblings().removeClass('clicked');
-			$('.farmersmarket').removeClass('clicked');       
+			$('.farmersmarket').removeClass('clicked');
 			this.collection.search(borough, term);
-			$('.search-input').val('');		
+			$('.search-input').val('');
 		}
 	},
 
